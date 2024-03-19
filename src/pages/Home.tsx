@@ -1,7 +1,13 @@
+import MainCarousel from "../components/Home/MainCarousel"
+import MainTitle from "../components/Home/MainTitle";
+
 export default function HomePage() {
   return (
-    <main id="home-page">
-      <h2>Our Mission: Your Success</h2>
-    </main>
+    <>
+      <main className="main-container relative">
+        <MainCarousel />
+        <MainTitle />
+      </main>
+    </>
   );
 }
