@@ -1,14 +1,14 @@
 import { type ReactNode, type ComponentPropsWithoutRef } from "react"
 
-type TitleProps = ComponentPropsWithoutRef<"h1"> & {
+type SubtitleProps = ComponentPropsWithoutRef<"h1"> & {
     children: ReactNode
 }
 
-export default function Title(props: TitleProps) {
+export default function Subtitle(props: SubtitleProps) {
     const { children, ...otherProps } = props
     return (
         <>
-            <h1 className="article-title decorated-text" {...otherProps}>
+            <h1 className="article-subtitle decorated-text" {...otherProps}>
                 {children}
             </h1>
         </>

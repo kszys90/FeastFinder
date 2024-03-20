@@ -19,6 +19,84 @@ body {
   font-style: normal;
 }
 
+.nav {
+  width: 50%;
+  text-align: center;
+}
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-button {
+  cursor: pointer;
+  width: 100%;
+  text-align: right;
+}
+
+.dropdown-menu {
+  position: absolute;
+  min-width: 8rem;
+  top: 100%;
+  background-color: #d1d0cb;
+  box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+  transition: all linear 0.3s;
+}
+
+.dropdown-menu--right {
+  right: 0;
+}
+
+.dropdown-menu p {
+  margin: 0;
+  padding: 0.5rem 2rem;
+
+}
+
+.dropdown-menu p:hover {
+  background-color: #ddd;
+}
+
+.input-container {
+  position: relative;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  max-width: 30rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #d1d0cb;
+  border-bottom: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.input-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1rem;
+  color: #666;
+  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.input-field:focus+.input-label {
+  transform: translateY(-130%) scale(0.8);
+  font-size: 0.8rem;
+  color: #96948f;
+}
+
 .relative {
   position: relative;
 }
@@ -30,12 +108,22 @@ body {
 @media screen and (min-width: 1024px) {
   .desktop__width-50 {
     width: 50%;
+    margin: 0 1rem;
   }
 }
 
 .article-title {
   text-align: center;
   font-size: 1.5rem;
+  color: white;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.article-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
   color: white;
   width: 100%;
   margin: 1rem 0;
@@ -54,6 +142,10 @@ body {
 @media screen and (min-width: 600px) {
   .article-title {
     font-size: 2.5rem;
+  }
+
+  .article-subtitle {
+    font-size: 2rem;
   }
 
   .article-description {
@@ -214,4 +306,8 @@ body {
     margin: 8rem 4rem;
 
   }
+}
+
+.search-form {
+  width: 100%;
 }

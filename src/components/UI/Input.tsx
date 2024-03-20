@@ -7,9 +7,9 @@ type InputProps = {
 
 export default function Input({ label, id, ...props }: InputProps) {
     return (
-        <div className="input">
-            <label htmlFor={id}>{label}</label>
-            <input id={id} {...props} />
+        <div className="input-container">
+            <input className="input-field" id={id} {...props} />
+            <label className="input-label" htmlFor={id}>{label}</label>
         </div>
     );
 }
