@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi";
+import DropdownMenu from './UI/DropdownMenu';
 
 
 export default function Header() {
@@ -7,8 +8,19 @@ export default function Header() {
         <>
             <header id="main-header">
                 <h1 className='decorated-text header-title'>Feast Finder</h1>
-                <nav>
-                    <GiHamburgerMenu className="header__menu-icon" />
+                <nav className='nav'>
+                    <DropdownMenu side="right" button={<GiHamburgerMenu className="header__menu-icon" />}>
+
+                        <p>
+                            <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
+                        </p>
+                        <p>
+                            <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
+                        </p>
+                        <p>
+                            <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
+                        </p>
+                    </DropdownMenu>
 
                     <ul className="header__nav-list">
                         <li>
