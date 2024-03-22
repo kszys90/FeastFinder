@@ -7,33 +7,36 @@ export default function Header() {
     return (
         <>
             <header id="main-header">
-                <h1 className='decorated-text header-title'>Feast Finder</h1>
-                <nav className='nav'>
-                    <DropdownMenu side="right" button={<GiHamburgerMenu className="header__menu-icon" />}>
+                <div className='main-header__container'>
 
-                        <p>
-                            <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
-                        </p>
-                        <p>
-                            <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
-                        </p>
-                        <p>
-                            <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
-                        </p>
-                    </DropdownMenu>
+                    <h1 className='decorated-text header-title'>Feast Finder</h1>
+                    <nav className='nav'>
+                        <DropdownMenu side="right" button={<GiHamburgerMenu className="header__menu-icon" />}>
 
-                    <ul className="header__nav-list">
-                        <li>
-                            <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
-                        </li>
-                        <li>
-                            <p>2</p>
-                        </li>
-                        <li>
-                            <p>3</p>
-                        </li>
-                    </ul>
-                </nav>
+                            <p>
+                                <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
+                            </p>
+                            <p>
+                                <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
+                            </p>
+                            <p>
+                                <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
+                            </p>
+                        </DropdownMenu>
+
+                        <ul className="header__nav-list">
+                            <li>
+                                <NavLink to="/" className={({ isActive }) => isActive ? 'link--active' : ''} end>Home</NavLink>
+                            </li>
+                            <li>
+                                <p>2</p>
+                            </li>
+                            <li>
+                                <p>3</p>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </header>
         </>
     );

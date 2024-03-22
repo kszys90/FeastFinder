@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, FormEventHandler } from "react";
 import MainCarousel from "../components/Home/MainCarousel"
 import MainTitle from "../components/Home/MainTitle";
 import Button from "../components/UI/Button";
@@ -12,6 +12,11 @@ export default function HomePage() {
   const [searchValue, setSearchValue] = React.useState<string>('')
   const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value)
+  }
+  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    console.log(searchValue)
+    console.log(searchType)
   }
   return (
     <>
@@ -30,15 +35,32 @@ export default function HomePage() {
                 something for everyone. Start your culinary adventure with us today and find your perfect meal!`}
           </Description>
         </div>
-        <div className="desktop__width-50">
+        <div className="desktop__width-50 search__second-container">
           <Subtitle>Select Search Type</Subtitle>
-          <form className="search-form" >
+          <div className="search-type__items-container">
+            <Button className={`search-type-button ${searchType === 'name' && `search-type-button--active`}`}
+              onClick={() => setSearchType('name')}
+            >Name
+            </Button>
+            <Button className={`search-type-button ${searchType === 'ingredient' && `search-type-button--active`}`}
+              onClick={() => setSearchType('ingredient')}
+            >Ingredient</Button>
+            <Button className={`search-type-button ${searchType === 'category' && `search-type-button--active`}`}
+              onClick={() => setSearchType('category')}
+            >Category</Button>
+            <Button className={`search-type-button ${searchType === 'area' && `search-type-button--active`}`}
+              onClick={() => setSearchType('area')}
+            >Area</Button>
+          </div>
+          <form className="search-form" onSubmit={handleSearchSubmit}>
             <FloatingInput
               inputValue={searchValue}
               onChange={handleSearchInputChange}
               label={`search by ${searchType}...`}
               id="search" />
-            <Button>Search</Button>
+            <div className="container__items--center">
+              <Button className="button center">Search</Button>
+            </div>
           </form>
         </div>
       </article>
