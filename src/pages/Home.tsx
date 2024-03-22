@@ -1,14 +1,18 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import MainCarousel from "../components/Home/MainCarousel"
 import MainTitle from "../components/Home/MainTitle";
 import Button from "../components/UI/Button";
 import Description from "../components/UI/Description";
-import Input from "../components/UI/Input";
 import Subtitle from "../components/UI/Subtitle";
 import Title from "../components/UI/Title";
+import FloatingInput from "../components/UI/FloatingInput";
 
 export default function HomePage() {
   const [searchType, setSearchType] = React.useState<'name' | 'ingredient' | 'category' | 'area'>('name')
+  const [searchValue, setSearchValue] = React.useState<string>('')
+  const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value)
+  }
   return (
     <>
       <main className="main-container relative">
@@ -29,7 +33,11 @@ export default function HomePage() {
         <div className="desktop__width-50">
           <Subtitle>Select Search Type</Subtitle>
           <form className="search-form" >
-            <Input label={`search by ${searchType}...`} id="search" />
+            <FloatingInput
+              inputValue={searchValue}
+              onChange={handleSearchInputChange}
+              label={`search by ${searchType}...`}
+              id="search" />
             <Button>Search</Button>
           </form>
         </div>
