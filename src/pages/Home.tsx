@@ -6,6 +6,8 @@ import Description from "../components/UI/Description";
 import Subtitle from "../components/UI/Subtitle";
 import Title from "../components/UI/Title";
 import FloatingInput from "../components/UI/FloatingInput";
+import { featuredList } from "../assets/featured-categories/featured-list";
+import FeaturedCard from "../components/Home/FeaturedCard";
 
 export default function HomePage() {
   const [searchType, setSearchType] = React.useState<'name' | 'ingredient' | 'category' | 'area' | 'letter'>('name')
@@ -68,7 +70,12 @@ export default function HomePage() {
         </div>
       </article>
       <article id="featured">
-
+        <Title>Featured Categories</Title>
+        <div className="featured__cards">
+          {featuredList.map((el) =>
+            <FeaturedCard img={el.img} name={el.name} />
+          )}
+        </div>
       </article>
       <article id="testimonials">
 
