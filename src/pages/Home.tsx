@@ -8,7 +8,7 @@ import Title from "../components/UI/Title";
 import FloatingInput from "../components/UI/FloatingInput";
 
 export default function HomePage() {
-  const [searchType, setSearchType] = React.useState<'name' | 'ingredient' | 'category' | 'area'>('name')
+  const [searchType, setSearchType] = React.useState<'name' | 'ingredient' | 'category' | 'area' | 'letter'>('name')
   const [searchValue, setSearchValue] = React.useState<string>('')
   const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value)
@@ -20,11 +20,11 @@ export default function HomePage() {
   }
   return (
     <>
-      <main className="main-container relative">
+      <main id="main" className="relative">
         <MainCarousel />
         <MainTitle />
       </main>
-      <article className="search-article__container">
+      <article id="search">
         <div className="desktop__width-50">
           <Title>Find Your Perfect Meal!</Title>
           <Description>
@@ -51,18 +51,30 @@ export default function HomePage() {
             <Button className={`search-type-button ${searchType === 'area' && `search-type-button--active`}`}
               onClick={() => setSearchType('area')}
             >Area</Button>
+            <Button className={`search-type-button ${searchType === 'letter' && `search-type-button--active`}`}
+              onClick={() => setSearchType('letter')}
+            >First letter</Button>
           </div>
           <form className="search-form" onSubmit={handleSearchSubmit}>
             <FloatingInput
               inputValue={searchValue}
               onChange={handleSearchInputChange}
               label={`search by ${searchType}...`}
-              id="search" />
+              id="search-input" />
             <div className="container__items--center">
               <Button className="button center">Search</Button>
             </div>
           </form>
         </div>
+      </article>
+      <article id="featured">
+
+      </article>
+      <article id="testimonials">
+
+      </article>
+      <article id="FAQ">
+
       </article>
     </>
   );
