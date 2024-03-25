@@ -8,7 +8,7 @@
   --accent-color: #181717;
   --secondary-color: #8C8C8C;
   --cta-color: #969662;
-  --hover-color: #050505;
+  --hover-color: #209e0f;
   --max-container-width: 1800px;
 }
 
@@ -110,6 +110,10 @@ body {
   color: #96948f;
 }
 
+.width-container {
+  max-width: var(--max-container-width);
+}
+
 .relative {
   position: relative;
 }
@@ -130,7 +134,7 @@ body {
   font-size: 1.5rem;
   color: white;
   width: 100%;
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
   padding: 0;
 }
 
@@ -316,23 +320,22 @@ body {
 }
 
 #search {
+  padding: 3rem 0;
+  background-image:
+    linear-gradient(var(--background-color),
+      var(--accent-color)),
+    url(./assets/featured-categories/imgs/pexels-jonathan-borba-3009323.jpg)
+}
+
+.search-container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  margin: 4rem 1rem;
 }
 
 @media screen and (min-width: 1024px) {
-  #search {
+  .search-container {
     flex-direction: row;
-    margin: 8rem 4rem;
-    max-width: var(--max-container-width);
-  }
-}
-
-@media screen and (min-width: 1800px) {
-  #search {
-    margin: 8rem auto;
-    max-width: var(--max-container-width);
   }
 }
 
@@ -341,7 +344,7 @@ body {
 }
 
 .button {
-  background-color: var(--accent-color);
+  background-color: var(--cta-color);
   color: var(--text-color);
   border: none;
   border-radius: 4px;
@@ -349,14 +352,14 @@ body {
   cursor: pointer;
   text-decoration: none;
   font: inherit;
+  transition: 0.3s ease-in-out;
+
 }
 
 .button:hover,
 .button:active {
+  transform: scale(1.05);
   background-color: var(--hover-color);
-  -webkit-box-shadow: 0px 0px 4px 2px rgba(68, 63, 63, 1);
-  -moz-box-shadow: 0px 0px 4px 2px rgba(68, 63, 63, 1);
-  box-shadow: 0px 0px 4px 2px rgba(68, 63, 63, 1);
 }
 
 .button.button--text-only {
@@ -405,6 +408,7 @@ body {
   cursor: pointer;
   text-decoration: none;
   font: inherit;
+  transition: 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 600px) {
@@ -414,16 +418,23 @@ body {
   }
 }
 
+.search-type-button:hover {
+  transform: scale(1.05);
+}
+
 .search-type-button--active {
   background-color: var(--cta-color);
+  transform: scale(1.05);
 }
 
 #featured {
-  margin: 3rem auto;
+  margin: 0 auto;
+  padding: 3rem 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  background-image: linear-gradient(rgb(105, 105, 105), var(--background-color));
 }
 
 .card {
@@ -436,6 +447,8 @@ body {
   color: white;
   cursor: pointer;
   padding: 0.5rem 1rem;
+  transition: 0.3s ease-in-out;
+
 }
 
 .card:hover {
@@ -469,11 +482,13 @@ body {
 
 @media screen and (min-width: 600px) {
   #featured {
-    flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
-    padding: 2rem;
   }
+
+  .featured__cards {
+    flex-wrap: nowrap;
+  }
+
 
   .card {
     max-width: 15rem;
@@ -481,6 +496,10 @@ body {
 }
 
 
-#testimonials {}
+#testimonials {
+  padding: 2rem;
+  background-color: var(--accent-color);
+  height: 50vh;
+}
 
 #FAQ {}
