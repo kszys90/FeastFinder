@@ -73,7 +73,7 @@ export default function HomePage() {
         <Title>Featured Categories</Title>
         <div className="featured__cards">
           {featuredList.map((el) =>
-            <FeaturedCard img={el.img} name={el.name} />
+            <FeaturedCard key={el.name} img={el.img} name={el.name} />
           )}
         </div>
       </article>
