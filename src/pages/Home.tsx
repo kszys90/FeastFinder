@@ -8,6 +8,7 @@ import Title from "../components/UI/Title";
 import FloatingInput from "../components/UI/FloatingInput";
 import { featuredList } from "../assets/featured-categories/featured-list";
 import FeaturedCard from "../components/Home/FeaturedCard";
+import TestimonialsCarousel from "../components/Home/TestimonialsCarousel";
 
 
 
@@ -82,7 +83,12 @@ export default function HomePage() {
         </div>
       </article>
       <article id="testimonials">
-
+        <div className="width-container">
+          <Title>Review from our regular users</Title>
+          <div className="testimonials__carousel-container">
+            <TestimonialsCarousel />
+          </div>
+        </div>
       </article>
       <article id="FAQ">
 
