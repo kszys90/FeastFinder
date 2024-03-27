@@ -4,6 +4,7 @@ import 'swiper/css/pagination';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import React from 'react';
 import { getRandomNames, type userData } from '../../api/randomName/getRandomNames';
+import TestimonialCard from './TestimonialCard';
 
 export default function TestimonialsCarousel() {
     const [users, setUsers] = React.useState<userData[]>([])
@@ -18,7 +19,6 @@ export default function TestimonialsCarousel() {
         <>
             {users.length > 0 &&
                 <Swiper
-                    spaceBetween={30}
                     loop={true}
                     pagination={{
                         clickable: true,
@@ -28,28 +28,30 @@ export default function TestimonialsCarousel() {
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
-                            spaceBetween: 1
+                            spaceBetween: 20
                         },
                         550: {
                             slidesPerView: 2,
-                            spaceBetween: 1
+                            spaceBetween: 20
                         },
                         650: {
                             slidesPerView: 3,
-                            spaceBetween: 1
+                            spaceBetween: 20
                         },
                         1000: {
                             slidesPerView: 4,
-                            spaceBetween: 1
+                            spaceBetween: 20
                         },
                         1500: {
                             slidesPerView: 5,
-                            spaceBetween: 1
+                            spaceBetween: 20
                         }
                     }}
                 >
                     {users.map((user, index) => (
-                        <SwiperSlide key={`${user.name.first}_${index}`}>{user.name.first}</SwiperSlide>
+                        <SwiperSlide key={`${user.name.first}_${index}`}>
+                            <TestimonialCard user={user} />
+                        </SwiperSlide>
                     ))}
                 </Swiper>
             }

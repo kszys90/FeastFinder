@@ -502,4 +502,9 @@ body {
   height: 50vh;
 }
 
+.testimonials__card {
+  background-color: var(--secondary-background-color);
+  padding: 1rem 2rem;
+}
+
 #FAQ {}
