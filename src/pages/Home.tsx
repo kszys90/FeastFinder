@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEventHandler } from "react";
+import React, { ChangeEvent } from "react";
 import MainCarousel from "../components/Home/MainCarousel"
 import MainTitle from "../components/Home/MainTitle";
 import Button from "../components/UI/Button";
@@ -9,6 +9,7 @@ import FloatingInput from "../components/UI/FloatingInput";
 import { featuredList } from "../assets/featured-categories/featured-list";
 import FeaturedCard from "../components/Home/FeaturedCard";
 import TestimonialsCarousel from "../components/Home/TestimonialsCarousel";
+import FAQList from "../components/Home/FAQList";
 
 
 
@@ -91,7 +92,12 @@ export default function HomePage() {
         </div>
       </article>
       <article id="FAQ">
-
+        <div className="width-container">
+          <Title>Frequently asked questions</Title>
+          <div className="FAQ__elements-container">
+            <FAQList />
+          </div>
+        </div>
       </article>
     </>
   );

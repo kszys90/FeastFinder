@@ -324,8 +324,7 @@ body {
   padding: 3rem 0;
   background-image:
     linear-gradient(var(--background-color),
-      var(--accent-color)),
-    url(./assets/featured-categories/imgs/pexels-jonathan-borba-3009323.jpg)
+      var(--accent-color))
 }
 
 @media screen and (min-width: 600px) {
@@ -549,4 +548,12 @@ body {
   text-align: center;
 }
 
-#FAQ {}
+#FAQ {
+  padding: 3rem 0;
+  background-image: linear-gradient(var(--accent-color), var(--background-color))
+}
+
+.FAQ__elements-container {
+  padding: 2rem 0;
+  width: 90%;
+}
