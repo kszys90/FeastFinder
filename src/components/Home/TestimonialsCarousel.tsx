@@ -23,6 +23,11 @@ export default function TestimonialsCarousel() {
                     pagination={{
                         clickable: true,
                     }}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: true,
+                    }}
+                    navigation={true}
                     modules={[Pagination, Autoplay, Navigation]}
                     className="mySwiper"
                     breakpoints={{

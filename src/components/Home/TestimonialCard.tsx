@@ -1,14 +1,16 @@
 import { userData } from "../../api/randomName/getRandomNames";
+import { IoStar } from "react-icons/io5";
 
 
 export default function TestimonialCard({ user }: { user: userData }) {
     return (
         <div className="testimonials__card">
-            <p>raitng 5/5</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nemo adipisci eligendi culpa assumenda recusandae,
-                itaque ea molestias similique facilis omnis ipsum, accusantium maiores commodi repudiandae aperiam minus, at cum?
+            <div className="testimonials-card__img-container">
+                <img className="testimonials-card__img" src={user.picture?.large} alt={`${user.name.first} ${user.name.last}`} />
+            </div>
+            <p className="testimonials-card__desc">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nemo adipisci eligendi culpa assumenda recusandae,"
             </p>
-            <p>{`${user.name.first} ${user.name.last}`}</p>
+            <p className="testimonials-card__name">{`${user.name.first} ${user.name.last}`}</p>
         </div>
     )
 }
