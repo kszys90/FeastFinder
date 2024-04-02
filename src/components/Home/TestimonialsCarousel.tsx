@@ -35,7 +35,7 @@ export default function TestimonialsCarousel() {
                             slidesPerView: 1,
                             spaceBetween: 20
                         },
-                        550: {
+                        440: {
                             slidesPerView: 2,
                             spaceBetween: 20
                         },

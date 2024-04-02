@@ -10,6 +10,7 @@ import { featuredList } from "../assets/featured-categories/featured-list";
 import FeaturedCard from "../components/Home/FeaturedCard";
 import TestimonialsCarousel from "../components/Home/TestimonialsCarousel";
 import FAQList from "../components/Home/FAQList";
+import MOTD from "../components/Home/MOTD";
 
 
 
@@ -83,6 +84,12 @@ export default function HomePage() {
           </div>
         </div>
       </article>
+      <article id="MOTD">
+        <div className="width-container">
+          <Title>Meal of the day</Title>
+          <MOTD />
+        </div>
+      </article>
       <article id="testimonials">
         <div className="width-container">
           <Title>Review from our regular users</Title>
@@ -93,7 +100,7 @@ export default function HomePage() {
       </article>
       <article id="FAQ">
         <div className="width-container">
-          <Title>Frequently asked questions</Title>
+          <Title>Frequently Asked Questions</Title>
           <div className="FAQ__elements-container">
             <FAQList />
           </div>
