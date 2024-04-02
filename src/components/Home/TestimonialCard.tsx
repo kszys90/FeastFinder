@@ -1,5 +1,4 @@
 import { userData } from "../../api/randomName/getRandomNames";
-import { IoStar } from "react-icons/io5";
 
 
 export default function TestimonialCard({ user }: { user: userData }) {

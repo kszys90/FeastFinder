@@ -506,27 +506,32 @@ body {
   }
 }
 
-#MOTD {
+#Most-liked {
   padding: 2rem;
   background-color: var(--accent-color);
 }
 
 .most-liked__container {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 12px;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   width: 100%;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1200px;
+  padding: 3rem 0;
 }
 
 .most-liked__element {
   height: 100%;
   width: 100%;
-  height: 60vh;
+  height: 40vh;
 }
 
-
+@media screen and (min-width: 768px) {
+  .most-liked__element {
+    height: 60vh;
+  }
+}
 
 .most-liked__img {
   height: 100%;
@@ -535,23 +540,20 @@ body {
 }
 
 .most-liked__container:has(.most-liked__element-1:hover) {
-  grid-template-columns: 2fr 0.5fr 0.5fr;
-  max-width: 900px;
+  grid-template-columns: 3fr 1fr 1fr;
 }
 
 .most-liked__container:has(.most-liked__element-2:hover) {
-  grid-template-columns: 0.5fr 2fr 0.5fr;
-  max-width: 900px;
+  grid-template-columns: 1fr 3fr 1fr;
 }
 
 .most-liked__container:has(.most-liked__element-3:hover) {
-  grid-template-columns: 0.5fr 0.5fr 2fr;
-  max-width: 900px;
+  grid-template-columns: 1fr 1fr 3fr;
 
 }
 
 .most-liked__element--not-hover {
-  filter: grayscale(50%);
+  filter: grayscale(60%);
 }
 
 .most-liked__element--hover {
