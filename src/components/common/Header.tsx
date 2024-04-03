@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi";
-import DropdownMenu from './UI/DropdownMenu';
+import DropdownMenu from '../UI/DropdownMenu';
 
 
 export default function Header() {
