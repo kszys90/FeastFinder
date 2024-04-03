@@ -8,7 +8,7 @@ export default function Title(props: TitleProps) {
     const { children, ...otherProps } = props
     return (
         <>
-            <h1 className="article-title decorated-text" {...otherProps}>
+            <h1 className="article-title " {...otherProps}>
                 {children}
             </h1>
         </>

@@ -8,7 +8,7 @@ export default function Subtitle(props: SubtitleProps) {
     const { children, ...otherProps } = props
     return (
         <>
-            <h1 className="article-subtitle decorated-text" {...otherProps}>
+            <h1 className="article-subtitle" {...otherProps}>
                 {children}
             </h1>
         </>

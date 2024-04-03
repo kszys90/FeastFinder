@@ -4,6 +4,20 @@ import { MealType } from '../../api/mealsDB/mealType'
 
 type mealListItem = { id: string, fetched: boolean }
 
+const mealsList = [{
+    id: '52963',
+    fetched: false
+},
+{
+    id: '52773',
+    fetched: false
+},
+{
+    id: '52951',
+    fetched: false
+}
+]
+
 export default function MostLikedArticle() {
     const [hover, setHover] = React.useState({
         isHover: false,
@@ -12,20 +26,7 @@ export default function MostLikedArticle() {
         el3: false
     })
 
-    const [mealsList, setMealsList] = React.useState<mealListItem[]>([
-        {
-            id: '52963',
-            fetched: false
-        },
-        {
-            id: '52773',
-            fetched: false
-        },
-        {
-            id: '52951',
-            fetched: false
-        },
-    ])
+
     const [mostLikedMeals, setMostLikedMeals] = React.useState<MealType[]>([])
     const [isLoading, setIsLoading] = React.useState(true)
     React.useEffect(() => {
@@ -39,13 +40,6 @@ export default function MostLikedArticle() {
                 const data = await getMealById(meal.id)
                 if (data.meals && isMealType(data.meals[0])) {
                     setMostLikedMeals(prevState => [...prevState, data.meals[0]])
-                    const updatedMeals = mealsList.map(item => {
-                        if (item.id === meal.id) {
-                            return { ...item, fetched: true }
-                        }
-                        return item
-                    });
-                    setMealsList(updatedMeals)
                 }
             }
             catch (error) {
@@ -59,7 +53,6 @@ export default function MostLikedArticle() {
             } catch (error) {
                 console.error("Error fetching meals:", error);
             } finally {
-                console.log(mostLikedMeals)
                 setIsLoading(false);
             }
         }

@@ -31,18 +31,30 @@ export default function HomePage() {
         <MainCarousel />
         <MainTitle />
       </main>
-      <article id="featured">
+      <article id="most-liked">
+        <div className="width-container">
+          <Title>The Most Liked Meals</Title>
+          <Description>
+            Out of all the options available, this particular product stands out as the most liked by users.
+          </Description>
+          <MostLikedArticle />
+        </div>
+      </article>
+      <article id="featured" className="article">
         <Title>Featured Categories</Title>
+        <Description>
+          Dive into our featured categories today and discover the perfect products to suit your unique preferences
+        </Description>
         <div className="featured__cards">
           {featuredList.map((el) =>
             <FeaturedCard key={el.name} img={el.img} name={el.name} />
           )}
         </div>
       </article>
-      <article id="search">
+      <article id="search" className="article">
+        <Title>Find Your Perfect Meal!</Title>
         <div className="width-container search-container">
-          <div className="desktop__width-50">
-            <Title>Find Your Perfect Meal!</Title>
+          <div className="search-description__container">
             <Description>
               {`Are you craving something specific? Or maybe you’re looking for inspiration for tonight’s dinner?
              Our search function is here to help! You can search by name, main ingredient, category, or area.
@@ -84,13 +96,8 @@ export default function HomePage() {
           </div>
         </div>
       </article>
-      <article id="Most-liked">
-        <div className="width-container">
-          <Title>The Most Liked Meals</Title>
-          <MostLikedArticle />
-        </div>
-      </article>
-      <article id="testimonials">
+
+      <article id="testimonials" className="article">
         <div className="width-container">
           <Title>Review from our regular users</Title>
           <div className="testimonials__carousel-container">
@@ -98,10 +105,10 @@ export default function HomePage() {
           </div>
         </div>
       </article>
-      <article id="FAQ">
+      <article id="FAQ" className="article">
         <div className="width-container">
           <Title>Frequently Asked Questions</Title>
-          <div className="FAQ__elements-container">
+          <div className="FAQ__items-container">
             <FAQList />
           </div>
         </div>
