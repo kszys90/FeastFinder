@@ -611,7 +611,29 @@ body {
   width: 100%;
   height: 40vh;
   margin: 1rem 0;
+  position: relative;
+
 }
+
+@media screen and (max-width: 600px) {
+  .most-liked__element-info {
+    color: white;
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: rgb(0, 0, 0, 0.78);
+    text-align: center;
+  }
+}
+
+.most-liked__element-info--title {
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
 
 @media screen and (min-width: 600px) {
   #most-liked {

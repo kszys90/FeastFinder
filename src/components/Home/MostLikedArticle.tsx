@@ -1,6 +1,7 @@
 import React from 'react'
 import { getMealById } from '../../api/mealsDB/getMealById'
 import { MealType } from '../../api/mealsDB/mealType'
+import Button from '../UI/Button'
 
 type mealListItem = { id: string, fetched: boolean }
 
@@ -76,6 +77,10 @@ export default function MostLikedArticle() {
                                     src={mostLikedMeals[0].strMealThumb}
                                     alt={mostLikedMeals[0].strMeal}
                                 />
+                                <div className='most-liked__element-info'>
+                                    <p className='most-liked__element-info--title'>{mostLikedMeals[0].strMeal}</p>
+                                    <Button to={'#'}>Show more</Button>
+                                </div>
                             </div>
                             <div className='most-liked__element-2 most-liked__element'
                                 onMouseEnter={() => setHover(prevState => ({ ...prevState, isHover: true, el2: true }))}
