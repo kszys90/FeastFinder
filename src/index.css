@@ -432,7 +432,6 @@ body {
   text-decoration: none;
   font: inherit;
   transition: 0.3s ease-in-out;
-
 }
 
 @media screen and (min-width: 1200px) {
@@ -600,7 +599,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -609,29 +608,64 @@ body {
 .most-liked__element {
   height: 100%;
   width: 100%;
-  height: 40vh;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
   position: relative;
+  background-color: var(--accent-color);
 
 }
 
-@media screen and (max-width: 600px) {
-  .most-liked__element-info {
-    color: white;
-    position: absolute;
-    height: 30%;
-    width: 100%;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    background-color: rgb(0, 0, 0, 0.78);
-    text-align: center;
-  }
+.most-liked__element-info {
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.most-liked__element-info--button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+
 }
 
 .most-liked__element-info--title {
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem 0;
+}
+
+/* .button {
+  background-color: var(--cta-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  font: inherit;
+  transition: 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 1200px) {
+  .button {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+}
+
+.button:hover,
+.button:active {
+  transform: scale(1.05);
+  background-color: var(--hover-color);
+} */
+
+
+.most-liked__element-button {
+  padding: 0.5rem 0.5rem;
+}
+
+.most-liked__element-button--list {
+  background-color: var(--secondary-color);
 }
 
 
@@ -653,15 +687,15 @@ body {
     height: 60vh;
   }
 
-  .most-liked__container:has(.most-liked__element-1:hover) {
+  .most-liked__container:has(.most-liked__element-0:hover) {
     grid-template-columns: 3fr 1fr 1fr;
   }
 
-  .most-liked__container:has(.most-liked__element-2:hover) {
+  .most-liked__container:has(.most-liked__element-1:hover) {
     grid-template-columns: 1fr 3fr 1fr;
   }
 
-  .most-liked__container:has(.most-liked__element-3:hover) {
+  .most-liked__container:has(.most-liked__element-2:hover) {
     grid-template-columns: 1fr 1fr 3fr;
 
   }
@@ -679,6 +713,12 @@ body {
   #most-liked {
     padding: 12rem 1rem;
   }
+}
+
+.most-liked__img-wrapper {
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .most-liked__img {

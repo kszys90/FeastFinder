@@ -35,7 +35,7 @@ export default function HomePage() {
         <div className="width-container">
           <Title>The Most Liked Meals</Title>
           <Description>
-            Out of all the options available, this particular product stands out as the most liked by users.
+            Out of all the options available, these products stand out as the most liked by users.
           </Description>
           <MostLikedArticle />
         </div>
