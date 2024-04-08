@@ -631,34 +631,7 @@ body {
 
 .most-liked__element-info--title {
   font-weight: 700;
-  margin: 0 0 2rem 0;
 }
-
-/* .button {
-  background-color: var(--cta-color);
-  color: var(--text-color);
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  font: inherit;
-  transition: 0.3s ease-in-out;
-}
-
-@media screen and (min-width: 1200px) {
-  .button {
-    font-size: 1.25rem;
-    padding: 1rem 2rem;
-  }
-}
-
-.button:hover,
-.button:active {
-  transform: scale(1.05);
-  background-color: var(--hover-color);
-} */
-
 
 .most-liked__element-button {
   padding: 0.5rem 0.5rem;
@@ -669,7 +642,7 @@ body {
 }
 
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   #most-liked {
     padding: 8rem 1rem;
   }
@@ -700,18 +673,68 @@ body {
 
   }
 
-  .most-liked__element--not-hover {
+  .most-liked__img--not-hover {
     filter: grayscale(60%);
   }
 
-  .most-liked__element--hover {
+  .most-liked__img--hover {
     filter: none;
   }
+
+  .most-liked__element-info {
+    position: absolute;
+    top: 100%;
+    transform: translate(0, -99%);
+    background-color: rgb(0, 0, 0, 0.72);
+  }
+
+  .most-liked__element-button--hidden {
+    display: none;
+  }
+
+  .most-liked__element-info--title {
+    font-size: 1rem;
+  }
+
+  .most-liked__element-info--title-hover {
+    font-size: 1.25rem;
+  }
+
+  .most-liked__element-info--title-not-hover {
+    padding: 0;
+    margin: 0;
+  }
+
+  .most-liked__element-info-category {
+    font-size: 0.75rem;
+
+  }
+
+  .most-liked__element-info-category--hover {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+
+  }
+
 }
 
 @media screen and (min-width: 1200px) {
   #most-liked {
     padding: 12rem 1rem;
+  }
+
+  .most-liked__element-info-category {
+    font-size: 1rem;
+
+  }
+
+  .most-liked__element-info-category--hover {
+    font-size: 1.25rem;
+
+  }
+
+  .most-liked__element-info--title-hover {
+    font-size: 1.5rem;
   }
 }
 
@@ -741,6 +764,7 @@ body {
   background-color: var(--secondary-background-color);
   padding: 1rem 2rem;
   border-radius: 10px;
+  transition: 0.2s ease-in-out;
 }
 
 .testimonials-card__img-container {
@@ -811,6 +835,7 @@ body {
   font-size: 2rem;
   transition: all 0.2s ease-in-out;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .faq-item__dropdown--rotated {
