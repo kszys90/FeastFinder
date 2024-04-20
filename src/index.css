@@ -907,7 +907,8 @@ body {
 
 #footer {
   background-color: var(--accent-color);
-  padding: 2rem 0;
+  padding-bottom: 2rem;
+  padding-top: 0.5rem;
   color: white;
 }
 
@@ -931,7 +932,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .footer__signature--link:hover,
@@ -949,38 +950,74 @@ body {
   transform: scale(1.15);
 }
 
-@media screen and (min-width: 600px) {
-  .footer__copyright {
-    font-size: 1.25rem;
-    text-align: center;
-  }
-
-  .footer__signature {
-    font-size: 0.75rem;
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .footer__copyright {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .footer__signature {
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  .footer__media-item {
-    font-size: 2em;
-    transition: 0.2s ease-in-out;
-  }
-}
-
 .search-page__container {
-  padding-top: 4rem;
   position: relative;
-  background-color: var(--background-color);
   min-height: 100dvh;
+}
+
+.search-page__main-container {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-page__input {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  flex: 1 0 200px
+}
+
+.search-page__select {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  flex: 1 0 40px
+}
+
+.search-page__input:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+.search-page__form-container {
+  max-width: 800px;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  gap: 0.5rem;
+}
+
+.search-page__input::placeholder {
+  color: #888;
+}
+
+.search-page__select::placeholder {
+  color: #888;
+}
+
+.search-page__button {
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .search-page__main-container {
+    padding-bottom: 4rem;
+  }
+}
+
+.search-page__results-container {
+  color: black;
 }
