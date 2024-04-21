@@ -1,6 +1,7 @@
 import React from "react"
 import { getMeals, searchByType } from "../../api/mealsDB/getMeals"
 import { MealType } from "../../api/mealsDB/mealType"
+import SearchMealResult from "./SearchMealResult"
 
 type SearchResultsType = {
     searchedFor: string | null
@@ -31,7 +32,7 @@ function SearchResults({ searchedFor, searchedBy }: SearchResultsType) {
                 <>
                     {data && data.length > 0 ?
                         data.map((meal: MealType) =>
-                            (<p key={meal.idMeal}>{meal.strMeal}</p>)
+                            (<SearchMealResult key={meal.idMeal} meal={meal} />)
                         ) :
                         <p>Nothing found</p>
                     }
