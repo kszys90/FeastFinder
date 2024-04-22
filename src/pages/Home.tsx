@@ -11,8 +11,7 @@ import FeaturedCard from "../components/Home/FeaturedCard";
 import TestimonialsCarousel from "../components/Home/TestimonialsCarousel";
 import FAQList from "../components/Home/FAQList";
 import MostLikedArticle from "../components/Home/MostLikedArticle";
-
-
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
   const [searchType, setSearchType] = React.useState<'name' | 'ingredient' | 'category' | 'area' | 'letter'>('name')
@@ -20,10 +19,10 @@ export default function HomePage() {
   const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value)
   }
+  const navigate = useNavigate();
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log(searchValue)
-    console.log(searchType)
+    navigate(`/search?search=${searchValue}&by=${searchType}`)
   }
   return (
     <>
