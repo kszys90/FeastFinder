@@ -6,9 +6,10 @@ const by = {
     firstLetter: 'search.php?f=',
     ingredient: 'filter.php?i=',
     category: 'filter.php?c=',
-    area: 'filter.php?a='
+    area: 'filter.php?a=',
+    id: 'lookup.php?i='
 }
-export type searchByType = 'name' | 'firstLetter' | 'ingredient' | 'category' | 'area'
+export type searchByType = 'name' | 'firstLetter' | 'ingredient' | 'category' | 'area' | 'id'
 
 export async function getMeals(searchedPhrase: string, searchedBy: searchByType) {
     const url = `https://www.themealdb.com/api/json/v1/1/${by[searchedBy]}${searchedPhrase}`

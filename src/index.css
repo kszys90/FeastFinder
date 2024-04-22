@@ -1200,3 +1200,10 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
+
+.meal-container {
+  min-height: 90dvh;
+  background-color: var(--background-color);
+  padding-top: 4rem;
+  color: white;
+}
