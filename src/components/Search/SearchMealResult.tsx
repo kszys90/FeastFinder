@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import { MealType } from '../../api/mealsDB/mealType'
 import Button from '../UI/Button'
 import { MdOutlineStarOutline } from "react-icons/md";
 
 export default function SearchMealResult({ meal }: { meal: MealType }) {
+    const navigate = useNavigate()
+    const handleLinkClick = () => {
+        if (meal) {
+            navigate(`../meal/${meal.idMeal}`)
+        }
+    }
     return (
         <div className='search-page__result-container'>
             <div className='search-page__result-img--wrapper'>
@@ -26,7 +33,11 @@ export default function SearchMealResult({ meal }: { meal: MealType }) {
                     </div>
                 </div>
                 <div className='search-page__result-button--wrapper'>
-                    <Button>Show more</Button>
+                    <Button
+                        onClick={handleLinkClick}
+                    >
+                        Show more
+                    </Button>
                 </div>
                 <div className='search-page__like-button'>
                     <MdOutlineStarOutline />
