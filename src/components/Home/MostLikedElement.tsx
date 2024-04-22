@@ -1,6 +1,7 @@
 import Button from '../UI/Button'
 import { MealType } from '../../api/mealsDB/mealType'
 import { HoverStateType } from './MostLikedArticle'
+import { useNavigate } from 'react-router-dom'
 
 
 type MostLikedElementType = {
@@ -19,6 +20,12 @@ export default function MostLikedElement({ data, target, handleHover, hover }: M
             return false
         }
         return true
+    }
+    const navigate = useNavigate()
+    const handleLinkClick = () => {
+        if (data) {
+            navigate(`meal/${data.idMeal}`)
+        }
     }
     return (
         data &&
@@ -41,7 +48,12 @@ export default function MostLikedElement({ data, target, handleHover, hover }: M
                     {data.strArea} | {data.strCategory}
                 </p>
                 <div className='most-liked__element-info--button-container'>
-                    <Button className={`button most-liked__element-button ${isHover() ? '' : 'most-liked__element-button--hidden'}`}>Read more</Button>
+                    <Button
+                        className={`button most-liked__element-button ${isHover() ? '' : 'most-liked__element-button--hidden'}`}
+                        onClick={handleLinkClick}
+                    >
+                        Read more
+                    </Button>
                     <Button className={`button most-liked__element-button most-liked__element-button--list ${isHover() ? '' : 'most-liked__element-button--hidden'}`} >+ Add to list</Button>
                 </div>
             </div>
